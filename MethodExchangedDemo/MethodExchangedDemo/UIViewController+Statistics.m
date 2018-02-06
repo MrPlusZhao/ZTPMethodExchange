@@ -24,6 +24,7 @@
     Method originalMethod = class_getInstanceMethod(className, oldMethod);
     Method swizzledMethod = class_getInstanceMethod(className, newMethod);
 
+    
     /**2:若UIViewController类没有该方法,那么它会去UIViewController的父类去寻找,为了避免不必要的麻烦,我们先进行一次添加
     */
     BOOL AddMethod = class_addMethod(className, oldMethod, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
@@ -44,7 +45,9 @@
     NSString * namestr = NSStringFromClass([self class]);
     
     NSLog(@"do something for statics in class %@",namestr);
+    //如果项目中集成了友盟统计,那么就可以在此处实现
     
+//    [MobClick beginLogPageView:namestr];
 }
 
 @end
