@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+/**
+ AOP切面编程思想,无侵入式
+ */
 @interface A_ViewController : UIViewController
 
 @end
